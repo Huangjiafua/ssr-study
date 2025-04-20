@@ -18,7 +18,7 @@ const server = http.createServer((req, res) => {
       { path: '/', text: '首页' },
       { path: '/about', text: '关于我们' }
     ],
-    currentPath: pathname  // 添加当前路径到模板数据
+    currentPath: pathname
   };
 
   // 路由处理
@@ -26,14 +26,14 @@ const server = http.createServer((req, res) => {
     renderPage(res, 'index.html', {
       ...commonData,
       pageTitle: '首页',
-      content: '欢迎来到我们的网站首页！'
+      content: '欢迎来到我们的网站首页！点击下方按钮试试看'
     });
   } else if (pathname === '/about') {
     renderPage(res, 'index.html', {
       ...commonData,
       title: '关于我们 - SSR 示例',
       pageTitle: '关于我们',
-      content: '这里是关于我们页面的内容。'
+      content: '这里是关于我们页面的内容。也有一个可点击的按钮'
     });
   } else {
     res.writeHead(404, { 'Content-Type': 'text/plain' });

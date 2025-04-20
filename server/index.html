@@ -38,6 +38,17 @@
     .active {
       font-weight: bold;
     }
+    button {
+      padding: 8px 16px;
+      background: #0078d7;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005bb5;
+    }
   </style>
 </head>
 <body>
@@ -60,6 +71,14 @@
   </header>
   <main>
     <p><%= content %></p>
+    <button id="printButton">点击打印消息</button>
   </main>
+
+  <script>
+    document.getElementById('printButton').addEventListener('click', () => {
+      console.log('按钮被点击了！');
+      alert('你点击了按钮！这条消息来自客户端JavaScript');
+    });
+  </script>
 </body>
 </html>
